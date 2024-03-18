@@ -1,0 +1,33 @@
+<%= form_with(model: first_word) do |form| %>
+  <% if first_word.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(first_word.errors.count, "error") %> prohibited this first_word from being saved:</h2>
+
+      <ul>
+        <% first_word.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :word, style: "display: block" %>
+    <%= form.text_field :word %>
+  </div>
+
+  <div>
+    <%= form.label :language, style: "display: block" %>
+    <%# form for selecting options %>
+    <%= form.select :language, ["English", "German", "French", "Spanish", "Italian", "Portuguese", "Dutch", "Russian", "Japanese", "Chinese", "Korean", "Arabic", "Hindi"] %>
+  </div>
+
+  <div>
+    <%= form.label :firstCharacter, style: "display: block" %>
+    <%= form.text_field :firstCharacter %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class FirstWord < ApplicationRecord
+end

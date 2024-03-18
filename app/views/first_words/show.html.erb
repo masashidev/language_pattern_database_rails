@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @first_word %>
+
+<div>
+  <%= link_to "Edit this first word", edit_first_word_path(@first_word) %> |
+  <%= link_to "Back to first words", first_words_path %>
+
+  <%= button_to "Destroy this first word", @first_word, method: :delete %>
+</div>
