@@ -6,14 +6,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <main class="container mx-auto">
-      <%= yield %>
+    <main class="m-4 sm:container border-2 border-gray-400 rounded-lg sm:mx-auto p-4">
+      <div>
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

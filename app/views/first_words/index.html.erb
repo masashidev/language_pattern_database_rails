@@ -1,19 +1,26 @@
 <p style="color: green"><%= notice %></p>
-
-<h1 class="font-bold text-3xl text-center"
->First words
+<h1 class="font-bold text-3xl text-center m-4 p-4"
+>First words list
 </h1>
-
-<div id="first_words">
+<div id="first_words" class="flex flex-wrap justify-center space-x-4">
   <% @first_words.each do |first_word|  %>
-    <%= render first_word %>
-    <p>
-      <%= link_to "Show this first word", first_word %>
-    </p>
+    <div class="relative">
+      <%= render first_word %>
+      <p class="absolute bottom-4 right-2 bg-white rounded-full hover:bg-slate-500">
+        <%= link_to "=>", first_word %>
+      </p>
+    </div>
   <% end %>
 </div>
 
+<div class="h-4 hover:bg-slate-800 bg-slate-400 w-5/6 m-auto rounded-lg"></div>
+<br>
+
+<%= render "form", first_word: @first_word %>
 
 <%= link_to "New first word", new_first_word_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
-
-
+<div class="">
+  <h2 class="font-bold text-3xl text-center m-4 p-4">
+    this is text a
+  </h2>
+</div>

@@ -4,6 +4,7 @@ class FirstWordsController < ApplicationController
   # GET /first_words or /first_words.json
   def index
     @first_words = FirstWord.all
+    @first_word = FirstWord.new
   end
 
   # GET /first_words/1 or /first_words/1.json
@@ -25,7 +26,7 @@ class FirstWordsController < ApplicationController
 
     respond_to do |format|
       if @first_word.save
-        format.html { redirect_to first_word_url(@first_word), notice: "First word was successfully created." }
+        format.html { redirect_to first_words_url, notice: "First word was successfully created." }
         format.json { render :show, status: :created, location: @first_word }
       else
         format.html { render :new, status: :unprocessable_entity }
