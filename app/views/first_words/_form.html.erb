@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :word, style: "display: block" %>
-    <%= form.text_field :word %>
+    <%= form.text_field :word, id: "word_input" %>
   </div>
 
   <div>
@@ -24,10 +24,12 @@
 
   <div>
     <%= form.label :firstCharacter, style: "display: block" %>
-    <%= form.text_field :firstCharacter %>
+    <%= form.text_field :firstCharacter, id: "firstCharacter_input" %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+

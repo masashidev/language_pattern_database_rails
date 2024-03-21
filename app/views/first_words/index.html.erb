@@ -6,9 +6,9 @@
   <% @first_words.each do |first_word|  %>
     <div class="relative">
       <%= render first_word %>
-      <p class="absolute bottom-4 right-2 bg-white rounded-full hover:bg-slate-500">
-        <%= link_to "=>", first_word %>
-      </p>
+      <div class="absolute top-3 right-0 bg-white rounded-full hover:bg-slate-500">
+        <%= button_to 'X', first_word, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "bg-red-500 hover:bg-red-700 text-white font-bold size-6 rounded" %>
+      </div>
     </div>
   <% end %>
 </div>
@@ -16,7 +16,10 @@
 <div class="h-4 hover:bg-slate-800 bg-slate-400 w-5/6 m-auto rounded-lg"></div>
 <br>
 
-<%= render "form", first_word: @first_word %>
+<div class="m-4">
+  <%= render "form", first_word: @first_word %>
+</div>
+
 
 <%= link_to "New first word", new_first_word_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
 <div class="">
@@ -24,3 +27,14 @@
     this is text a
   </h2>
 </div>
+
+
+<script>
+
+const wordInput = document.getElementById("word_input");
+console.log("wordInput: ", wordInput);
+wordInput.focus();  // Focus on the word input after page loads or reloads
+
+
+
+</script>
